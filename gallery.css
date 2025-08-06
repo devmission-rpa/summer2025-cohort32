@@ -1,0 +1,57 @@
+body {
+  background: #fef9f4;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #5b3a29;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.photo {
+  background: white;
+  padding: 10px;
+  border: 3px solid #ddd;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  transform: rotate(calc(var(--rotate)));
+  transition: transform 0.3s;
+  position: relative;
+  width: 180px;
+  height: auto;
+}
+
+/* Random rotation using custom properties */
+.photo:nth-child(odd) {
+  --rotate: -4deg;
+}
+.photo:nth-child(even) {
+  --rotate: 3deg;
+}
+.photo:nth-child(3n) {
+  --rotate: -2deg;
+}
+.photo:nth-child(5n) {
+  --rotate: 2.5deg;
+}
+
+.photo:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 10;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
