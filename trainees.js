@@ -31,17 +31,18 @@ async function getAllRecords() {
         let color = data.records[i].fields["Fav Color"];
         let bio = data.records[i].fields["Short Bio"];
         let thing = data.records[i].fields["Fav Thing Learned"];
+        let link = data.records[i].fields["Github Page"];
 
         newHtml += `
         <div class="trainee">
-			    <div class="polaroid">
+			    <a href="${link}" class="polaroid" target="_blank">
 				    <div class="headshot">
 					    ${image ? `<img src="${image[0].url}" alt="Image of ${name}.">` : ``}
 				    </div>
 				    <div class="caption">
 					    <p style="color:${color}">${name}</p>
 				    </div>
-          </div>
+          </a>
           <div class="popout">
             <p>${bio}</p>
             <p>Favorite thing learned: ${thing}</p>
