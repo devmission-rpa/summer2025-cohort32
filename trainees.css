@@ -1,10 +1,17 @@
 /* general trainee page styling */
 body {
   background-image: url("backgroundtrainees.png");
-  background-size: 100vw 100vh;
+  background-size: 100vw 125vh;
   background-repeat: no-repeat;
 }
-
+header {
+}
+h1 {
+  background: white;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 10px 10px 5px rgba(45, 15, 6, 0.812);
+}
 /* styling for Container Box */
 .container-fluid {
   display: flex;
@@ -17,8 +24,9 @@ body {
   width: 180px;
   height: 180px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 10px 10px 5px rgb(181, 115, 49, 0.775);
+  box-shadow: 10px 10px 5px rgba(45, 15, 6, 0.812);
   margin: 50px;
+  padding: 5px;
   text-align: center;
 }
 .headshot {
@@ -34,8 +42,24 @@ img {
 }
 .caption {
   font-size: 24px;
-  padding-top: 5px;
   font-weight: bold;
+}
+
+/* popup styling, if it works */
+.popout {
+  display: none;
+  position: absolute;
+  background-image: url(papertexture.png);
+  max-width: 280px;
+  box-shadow: 10px 10px 5px rgba(45, 15, 6, 0.812);
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-radius: 2px;
+}
+
+.trainee:hover .popout {
+  display: block;
 }
 
 /* sorry to whoever wrote this code
