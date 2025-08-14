@@ -28,6 +28,7 @@ async function getAllRecords() {
         // for each table row, create and append HTML listing
         let name = data.records[i].fields["Name"];
         let image = data.records[i].fields["Headshot Image"];
+        let color = data.records[i].fields["Fav Color"];
 
         newHtml += `
 			<div class="polaroid">
@@ -35,7 +36,7 @@ async function getAllRecords() {
 					${image ? `<img src="${image[0].url}" alt="Image of ${name}.">` : ``}
 				</div>
 				<div class="caption">
-					${name}
+					<p style="color:${color}">${name}</p>
 				</div>
 			</div>
         `;
