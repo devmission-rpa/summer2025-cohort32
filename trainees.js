@@ -35,6 +35,7 @@ async function getAllRecords() {
 
         newHtml += `
         <div class="trainee">
+			<img src="./pinicon.png" class="pin">
 			    <a href="${link}" class="polaroid" target="_blank">
 				    <div class="headshot">
 					    ${image ? `<img src="${image[0].url}" alt="Image of ${name}.">` : ``}
@@ -51,8 +52,27 @@ async function getAllRecords() {
         `;
       }
 
-      getResultElement.innerHTML = newHtml;
+       getResultElement.innerHTML = newHtml;
+
+      // Add event listener to each polaroid
+      const polaroids = document.querySelectorAll(".polaroid");
+      polaroids.forEach((polaroid) => {
+        polaroid.addEventListener("mouseover", hoverHandler);
+      });
     });
 }
 
 getAllRecords();
+
+const hoverHandler = (event) => {
+	const trainee = event.currentTarget.closest(".trainee");
+	
+	// get current scroll position of window
+	const currentScrollPosition = window.scrollY;
+	
+	// calculate new scroll position
+	const newScrollPosition = currentScrollPosition + trainee.offsetTop;
+	
+	// scroll window to new position
+	window.scrollTo(0, newScrollPosition);
+};

@@ -1,17 +1,33 @@
 /* general trainee page styling */
 body {
-  background-image: url("backgroundtrainees.png");
-  background-size: 100vw 125vh;
-  background-repeat: no-repeat;
+  background-image: url("seamless-cork.jpg");
+  background-repeat: repeat;
 }
+
+/* Top html styling */
 header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
-h1 {
-  background: white;
+
+.title {
+  background-image: url(papertexture.png);
+  width: fit-content;
+  height: min-content;
   text-align: center;
-  margin: 20px;
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 700;
+  font-size: 5em;
+  padding: 1%;
+  border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(45, 15, 6, 0.812);
+  color: black;
 }
+.logo {
+  max-width: 45%;
+}
+
 /* styling for Container Box */
 .container-fluid {
   display: flex;
@@ -20,11 +36,18 @@ h1 {
 }
 
 /* styling for individual polaroids */
+.pin {
+  position: absolute;
+  margin-left: 117px;
+  margin-top: 5px;
+  z-index: -1;
+}
+
 .polaroid {
   width: 180px;
   height: 180px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 10px 10px 5px rgba(45, 15, 6, 0.812);
+  box-shadow: 8px 8px 3px rgba(45, 15, 6, 0.812);
   margin: 50px;
   padding: 5px;
   text-align: center;
@@ -41,8 +64,10 @@ img {
   max-width: 100%;
 }
 .caption {
+  font-family: "Knewave", system-ui;
+  font-style: normal;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* popup styling, if it works */
